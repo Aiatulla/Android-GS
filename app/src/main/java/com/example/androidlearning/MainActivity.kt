@@ -61,9 +61,15 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         Row(modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically){
-            Text(
-                text = prevWord.takeIf { it.isNotEmpty() }?.let { "Last texts: $it" } ?: "Click buttons"
-            )
+//            Text(
+//                text = prevWord.takeIf { it.isNotEmpty() }?.let { "Last texts: $it" } ?: "Click buttons"
+//            )
+            if (prevWord.length > 0){
+                Text("Last text: $prevWord")
+            }
+            else{
+                Text("Choose words")
+            }
 
         }
 
